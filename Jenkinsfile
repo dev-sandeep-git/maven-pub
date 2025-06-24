@@ -1,14 +1,29 @@
 pipeline {
     agent any
 
+    // Jenkins automatically checks out the repo (from the branch that triggered the build)
+
     stages {
-        stage('Checkout') {
+        stage('Build') {
             steps {
-                // Checkout private GitHub repo using HTTPS and PAT
-                git(
-                    url: 'https://github.com/dev-sandeep-git/maven-pub.git/',
-                    
-                )
+                echo 'Building the project...'
+                // Example: run Maven build if it’s a Maven project
+                // sh 'mvn clean install'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Running tests...'
+                // Example: run tests
+                // sh 'mvn test'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploying the application...'
+                // Add your deploy commands here
             }
         }
     }
