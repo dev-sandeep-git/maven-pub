@@ -1,8 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="
-           http://maven.apache.org/POM/4.0.0
-           http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
 
@@ -12,19 +11,18 @@
     <packaging>jar</packaging>
 
     <name>My App</name>
-    <description>Sample project deploying to Nexus with server id 'nexus-repo'</description>
+    <description>Sample project deploying to Nexus</description>
 
     <distributionManagement>
         <repository>
-            <id>nexus-repo</id> <!-- This ID must match your settings.xml server ID -->
+            <id>nexus-repo</id>
             <name>Nexus Release Repository</name>
             <url>http://16.176.183.207:8082/repository/MAVEN-RELEASE/</url>
         </repository>
         <snapshotRepository>
-            <id>nexus-repo</id> <!-- Same ID for snapshots -->
+            <id>nexus-repo</id>
             <name>Nexus Snapshot Repository</name>
             <url>http://16.176.183.207:8082/repository/MAVEN-SNAPSHOT/</url>
         </snapshotRepository>
     </distributionManagement>
-
 </project>
