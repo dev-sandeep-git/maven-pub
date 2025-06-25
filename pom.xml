@@ -7,19 +7,16 @@
 
     <groupId>com.example</groupId>
     <artifactId>my-app</artifactId>
-    <version>1.0.0-SNAPSHOT</version> <!-- Change to a release version when releasing -->
+    <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
-
-    <name>My App</name>
-    <description>Sample project deploying to Nexus</description>
 
     <distributionManagement>
         <repository>
-            <id>nexus-repo</id>  <!-- must match server ID in settings.xml -->
+            <id>nexus-repo</id>
             <url>http://16.176.183.207:8082/repository/MAVEN-RELEASE/</url>
         </repository>
         <snapshotRepository>
-            <id>nexus-repo</id>  <!-- same ID for snapshots -->
+            <id>nexus-repo</id>
             <url>http://16.176.183.207:8082/repository/MAVEN-SNAPSHOT/</url>
         </snapshotRepository>
     </distributionManagement>
