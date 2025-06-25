@@ -14,7 +14,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git branch: "${params.BRANCH}", url: 'https://your-git-repo-url/project.git'
+                git branch: 'main', url: 'https://github.com/dev-sandeep-git/maven-pub.git'
             }
         }
 
@@ -25,16 +25,10 @@ pipeline {
         }
 
         stage('Deploy to Nexus') {
-            steps {
-                withCredentials([usernamePassword(credentialsId: 'nexus-credentials', usernameVariable: 'NEXUS_USER', passwordVariable: 'NEXUS_PASS')]) {
-                    sh '''
-                        mvn deploy \
-                        -DskipTests \
-                        -Dnexus.username=$NEXUS_USER \
-                        -Dnexus.password=$NEXUS_PASS
-                    '''
-                }
-            }
+    steps {
+        sh 'mvn deploy -DskipTests'
+    }
+}
         }
     }
 
