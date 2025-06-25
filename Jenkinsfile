@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'Maven'   // Replace 'Maven3' with the name of your Maven installation in Jenkins
+        maven 'maven'   // Replace 'Maven3' with the name of your Maven installation in Jenkins
     }
 
     stages {
