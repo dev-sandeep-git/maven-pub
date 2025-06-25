@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'maven'  // use the exact name from Global Tool Configuration
+        maven 'Maven3'  // Your Jenkins Maven config name
     }
 
     stages {
@@ -14,7 +14,7 @@ pipeline {
 
         stage('Build and Deploy') {
             steps {
-                sh 'mvn clean deploy --settings settings.xml'
+                sh 'mvn clean deploy --settings /var/lib/jenkins/.m2/settings.xml'
             }
         }
     }
