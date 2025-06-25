@@ -20,9 +20,7 @@ pipeline {
 
         stage('Deploy to Nexus') {
             steps {
-                mvn deploy -DskipTests -s /var/lib/jenkins/.m2/settings.xml
-
-
+                sh 'mvn deploy -DskipTests -s /var/lib/jenkins/.m2/settings.xml'
 
             }
         }
