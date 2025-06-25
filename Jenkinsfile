@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    tools {
+        maven 'Maven'   // Replace 'Maven3' with the name of your Maven installation in Jenkins
+    }
+
     stages {
         stage('Checkout') {
             steps {
@@ -16,10 +20,8 @@ pipeline {
 
         stage('Deploy to Nexus') {
             steps {
-                // your deploy script here
                 sh 'mvn deploy -DskipTests'
             }
         }
-    }  // closes stages
-
-}  // closes pipeline
+    }
+}
