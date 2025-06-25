@@ -14,7 +14,8 @@ pipeline {
 
         stage('Build and Deploy') {
             steps {
-                sh 'mvn clean deploy /var/lib/jenkins/.m2/settings.xml'
+                sh 'mvn clean deploy --settings /var/lib/jenkins/.m2/settings.xml'
+
             }
         }
     }
