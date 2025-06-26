@@ -21,10 +21,4 @@
         </snapshotRepository>
     </distributionManagement>
 
-    <modules>
-        <module>module-a</module>
-        <module>module-b</module>
-        <module>module-c</module>
-    </modules>
-
-</project>
+    </project>
