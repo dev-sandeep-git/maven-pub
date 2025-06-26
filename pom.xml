@@ -13,11 +13,11 @@
     <distributionManagement>
         <repository>
             <id>nexus-repo</id>
-            <url>http://16.176.183.207:8082/repository/MAVEN-RELEASE/</url>
+            <url>http://54.252.240.45:8082/repository/MAVEN-RELEASE/</url>
         </repository>
         <snapshotRepository>
             <id>nexus-repo</id>
-            <url>http://16.176.183.207:8082/repository/MAVEN-SNAPSHOT/</url>
+            <url>http://54.252.240.45:8082/repository/MAVEN-SNAPSHOT/</url>
         </snapshotRepository>
     </distributionManagement>
 
