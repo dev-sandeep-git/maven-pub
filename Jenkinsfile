@@ -1,40 +1,32 @@
 pipeline {
     agent any
 
-    tools {
-        maven 'maven'
-    }
-
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                echo 'Checking out the code...'
+                // This is where code is downloaded from your repo
             }
         }
 
-        stage('Debug') {
-            steps {
-                sh 'echo WORKSPACE CONTENTS: && ls -l && echo MODULE-A CONTENTS: && ls -l module-a || echo "module-a not found"'
-            }
-        }
-
-        stage('Build and Deploy') {
+        stage('Build Modules in Parallel') {
             parallel {
-                stage('Module A') {
+                stage('Build Module A') {
                     steps {
-                        sh 'mvn clean deploy -pl module-a -am --settings /var/lib/jenkins/.m2/settings.xml'
+                        echo 'Building Module A...'
+                        // Your build commands for Module A go here
                     }
                 }
-
-                stage('Module B') {
+                stage('Build Module B') {
                     steps {
-                        sh 'mvn clean deploy -pl module-b -am --settings /var/lib/jenkins/.m2/settings.xml'
+                        echo 'Building Module B...'
+                        // Your build commands for Module B go here
                     }
                 }
-
-                stage('Module C') {
+                stage('Build Module C') {
                     steps {
-                        sh 'mvn clean deploy -pl module-c -am --settings /var/lib/jenkins/.m2/settings.xml'
+                        echo 'Building Module C...'
+                        // Your build commands for Module C go here
                     }
                 }
             }
