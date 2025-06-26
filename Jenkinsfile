@@ -13,9 +13,24 @@ pipeline {
         }
 
         stage('Build and Deploy') {
-            steps {
-                sh 'mvn clean deploy --settings /var/lib/jenkins/.m2/settings.xml'
+            parallel {
+                stage('Module A') {
+                    steps {
+                        sh 'mvn clean deploy -pl module-a --settings /var/lib/jenkins/.m2/settings.xml'
+                    }
+                }
 
+                stage('Module B') {
+                    steps {
+                        sh 'mvn clean deploy -pl module-b --settings /var/lib/jenkins/.m2/settings.xml'
+                    }
+                }
+
+                stage('Module C') {
+                    steps {
+                        sh 'mvn clean deploy -pl module-c --settings /var/lib/jenkins/.m2/settings.xml'
+                    }
+                }
             }
         }
     }
