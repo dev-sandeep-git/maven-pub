@@ -20,5 +20,10 @@
             <url>http://54.252.240.45:8082/repository/MAVEN-SNAPSHOT/</url>
         </snapshotRepository>
     </distributionManagement>
+<modules>
+    <module>module-a</module>
+    <module>module-b</module>
+    <module>module-c</module>
+</modules>
 
 </project>
